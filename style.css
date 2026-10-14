@@ -1,0 +1,158 @@
+:root {
+  --bg: #0f1220;
+  --card: #1a1f35;
+  --texto: #e8ebf5;
+  --suave: #9aa3c2;
+  --acento: #6c8cff;
+  --acento2: #b06cff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* Barra de navegación */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6vw;
+  background: rgba(15, 18, 32, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #252b47;
+}
+
+.logo {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: var(--acento);
+  text-decoration: none;
+}
+
+.nav nav a {
+  color: var(--suave);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav nav a:hover { color: var(--texto); }
+
+/* Portada */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6vw;
+}
+
+.hola { color: var(--acento); font-family: "Courier New", monospace; }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--acento), var(--acento2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 8px 0;
+}
+
+.rol { color: var(--suave); font-size: 1.2rem; margin-bottom: 28px; }
+
+/* Botones */
+.botones { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #0f1220;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--acento);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.btn-sec { background: transparent; color: var(--acento); }
+
+/* Secciones */
+.seccion { padding: 70px 6vw; max-width: 1000px; margin: 0 auto; }
+
+.seccion h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.seccion h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 50px; height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--acento), var(--acento2));
+}
+
+.seccion p { color: var(--suave); margin-bottom: 18px; }
+
+/* Tarjetas */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta {
+  background: var(--card);
+  border: 1px solid #252b47;
+  border-radius: 14px;
+  padding: 24px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.tarjeta:hover { transform: translateY(-5px); border-color: var(--acento); }
+
+.tarjeta h3 { margin-bottom: 6px; font-size: 1.1rem; }
+.tarjeta p { margin-bottom: 14px; }
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: rgba(108, 140, 255, 0.15);
+  color: var(--acento);
+}
+
+.centro { text-align: center; }
+.emoji { font-size: 2.4rem; margin-bottom: 8px; }
+
+/* Pie */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--suave);
+  border-top: 1px solid #252b47;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .nav nav a { margin-left: 12px; font-size: 0.85rem; }
+}
