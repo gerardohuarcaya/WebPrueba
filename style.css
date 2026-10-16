@@ -49,6 +49,38 @@ body {
 
 .nav nav a:hover { color: var(--texto); }
 
+.nav nav a.activo { color: var(--acento); font-weight: 600; }
+
+/* Páginas internas */
+.pagina { min-height: 70vh; }
+
+.titulo-pagina {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--acento), var(--acento2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pagina h2 { margin-top: 36px; }
+
+.espacio { margin-top: 36px; }
+
+.ver-mas {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ver-mas:hover { text-decoration: underline; }
+
+.enlace { color: var(--acento); text-decoration: none; word-break: break-all; }
+.enlace:hover { text-decoration: underline; }
+
 /* Portada */
 .hero {
   min-height: 80vh;
